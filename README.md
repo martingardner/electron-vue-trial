@@ -4,6 +4,7 @@
 - using https://github.com/electron/electron-packager for the builder.
 - note everything in the Electron Demo-win32-x64 folder is needed to run it, basically it's the aftereffect of a wizard install. To test I created a shortcut link off of the .exe and put it on my desktop and it runs
 - note this is an .exe in the purest sense, it will not add anything to the registry for Windows.
+- also note, the final exe is not pushed up as the file size exceeds my current github maximum, so note that since chromium is being bundled, even simple projects have decent file sizes
 
 # caveat's
 
