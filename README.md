@@ -15,3 +15,13 @@
 
 - with this current setup, Vue can't really make use of Electron's inherant functions, like accessing the file system or clipboard stuff etc... which may not be a problem unless it is
 - have a build that will work with windows, don't have one for linux binaries or mac .app
+
+# steps I'm using
+
+- develop in vue folder
+- npm run build in vue when done so that I get a dist folder of assets
+- move assets over to electron dist folder where main.js is targeting
+- note vue build's idiocy of not using "" on script path, add those in as well as update the path to be ./
+- npm run start to make sure it works in electron
+- npm run package to run electron-builder and build out the file
+- don't commit final product on this repo because of current file size limit, this step will change whenever I get around to updating my account
