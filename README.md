@@ -1,3 +1,8 @@
+# installation
+
+- 2 separate projects, one for vue and 1 for electron
+- cd into each and run npm install
+
 # electron-vue-trial
 
 - the initial thought is separate the two concerns, make the electron one folder and the vue another folder. Have the final build of vue end up in the src of electron and then have electron run that. Since Electron just runs html/js/css and the end result of vue is a js file attached to an index, this should work in theory.
