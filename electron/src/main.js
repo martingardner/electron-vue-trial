@@ -1,10 +1,12 @@
 const electron = require("electron");
-const app = electron.app;
+const { app, Tray, Menu } = electron;
 const BrowserWindow = electron.BrowserWindow;
+const path = require("path");
 
 let mainWindow;
 
 app.on("ready", () => {
+  /* mainWindow section */
   mainWindow = new BrowserWindow({
     height: 1000,
     width: 1000,
@@ -16,4 +18,7 @@ app.on("ready", () => {
   });
 
   mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
+  /* tray section */
+  //const tray = new Tray(path.join("src", "demo-image.png"));
+  const tray = new Tray(path.join("src", "./electron-assets/demo-image.png"));
 });
