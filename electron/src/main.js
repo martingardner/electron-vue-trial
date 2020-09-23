@@ -10,6 +10,7 @@ app.on("ready", () => {
   mainWindow = new BrowserWindow({
     height: 1000,
     width: 1000,
+    icon: __dirname + "/electron-assets/demo-image.ico",
   });
 
   mainWindow.on("closed", () => {
