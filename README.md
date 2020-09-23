@@ -20,7 +20,6 @@
 
 - with this current setup, Vue can't really make use of Electron's inherant functions, like accessing the file system or clipboard stuff etc... which may not be a problem unless it is
 - have a build that will work with windows, don't have one for linux binaries or mac .app
-- get tray icon to work in both electron and after it's packaged in electron builder
 
 # steps I'm using
 
@@ -32,3 +31,4 @@
 - npm run package to run electron-builder and build out the file
 - don't commit final product on this repo because of current file size limit, this step will change whenever I get around to updating my account
 - everything inside of Electron Demo-win32-x64 is needed to run, can make shortcut of exe inside of course but it should be noted this isn't a wizard that installs anything, it's the end result of an exe and it's assets needed to run.
+- on a new npm run package, if there is an existing Electron Demo-win32-x64 folder, delete that first before running the command. Make sure there is no caching issues.
