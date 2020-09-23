@@ -18,7 +18,20 @@ app.on("ready", () => {
   });
 
   mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
+
   /* tray section */
-  //const tray = new Tray(path.join("src", "demo-image.png"));
   const tray = new Tray(path.join("src", "./electron-assets/demo-image.png"));
+
+  /* menu section */
+  const menuTemplate = [
+    {
+      label: "Quit",
+      click: () => {
+        app.quit();
+      },
+    },
+  ];
+
+  const menu = Menu.buildFromTemplate(menuTemplate);
+  Menu.setApplicationMenu(menu);
 });
