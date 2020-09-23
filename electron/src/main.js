@@ -20,7 +20,19 @@ app.on("ready", () => {
   mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
 
   /* tray section */
-  const tray = new Tray(path.join("src", "./electron-assets/demo-image.png"));
+  //need dirname over path.join src for it to be read correctly by both electron and electron-packager
+  const tray = new Tray(`${__dirname}/electron-assets/demo-image.png`);
+  const trayMenu = Menu.buildFromTemplate([
+    {
+      label: "Quit",
+      click: () => {
+        app.quit();
+      },
+    },
+  ]);
+
+  tray.setContextMenu(trayMenu);
+  tray.setToolTip("this is the demo app");
 
   /* menu section */
   const menuTemplate = [

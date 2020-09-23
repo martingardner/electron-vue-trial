@@ -20,6 +20,7 @@
 
 - with this current setup, Vue can't really make use of Electron's inherant functions, like accessing the file system or clipboard stuff etc... which may not be a problem unless it is
 - have a build that will work with windows, don't have one for linux binaries or mac .app
+- get tray icon to work in both electron and after it's packaged in electron builder
 
 # steps I'm using
 
