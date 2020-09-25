@@ -42,10 +42,10 @@ node_modules/
 jspm_packages/
 
 #Electron Demo-win32-x64
-Electron*Demo-win32-x64
+electron-demo-win32-x64
 
-#Electron Demo-win32-x64
-Electron*Demo-win32-x64
+#Electron installer folder
+installer
 
 # TypeScript v1 declaration files
 typings/
