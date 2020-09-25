@@ -1,18 +1,20 @@
 {
   "name": "electron-demo",
-  "productName": "Electron Demo",
+  "productName": "electron-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "An Electron Demo",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . --icon=src/electron-assets/demo-image.ico"
+    "package": "electron-packager . --icon=src/electron-assets/demo-image.ico",
+    "win-exec": "electron-installer-windows --src electron-demo-win32-x64/ --dest installer/"
   },
   "keywords": [],
-  "author": "",
+  "author": "Martin Gardner",
   "license": "ISC",
   "devDependencies": {
     "electron": "^10.1.2",
+    "electron-installer-windows": "^3.0.0",
     "electron-packager": "^15.1.0"
   }
 }
