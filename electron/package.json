@@ -7,7 +7,7 @@
   "scripts": {
     "start": "electron .",
     "package": "electron-packager . --icon=src/electron-assets/demo-image.ico",
-    "win-exec": "electron-installer-windows --src electron-demo-win32-x64/ --dest installer/"
+    "win-exec": "electron-installer-windows --src electron-demo-win32-x64/ --config installer-config.json"
   },
   "keywords": [],
   "author": "Martin Gardner",
