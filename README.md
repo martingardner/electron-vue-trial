@@ -6,14 +6,15 @@
 # electron-vue-trial
 
 - the initial thought is separate the two concerns, make the electron one folder and the vue another folder. Have the final build of vue end up in the src of electron and then have electron run that. Since Electron just runs html/js/css and the end result of vue is a js file attached to an index, this should work in theory.
-- using https://github.com/electron/electron-packager for the builder.
-- note everything in the Electron Demo-win32-x64 folder is needed to run it, basically it's the aftereffect of a wizard install. To test I created a shortcut link off of the .exe and put it on my desktop and it runs
-- note this is an .exe in the purest sense, it will not add anything to the registry for Windows.
-- also note, the final exe is not pushed up as the file size exceeds my current github maximum, so note that since chromium is being bundled, even simple projects have decent file sizes
+- using electron-forge for the electron side (global install npm install -g electron-forge)
+- 2 forms of build squirrel.windows build which simply installs but does not give you the option to choose directory (default for electron-forge) or WiX which is the traditional installer with options but requires admin rights for user and needs install on development computer (see todos);
+
+# electron folder (old)
+
+- uses electron-packager but ran into problems with electron-windows-installer, can only do version of squirrel and doesn't put anything on the desktop by default so you have to hunt for the files after installation.
 
 # caveat's
 
-- currently copying final dist over into electron shell
 - when copying index.html, note, you have to update the scripts in the index file so that it has "" and the path starts with ./
 
 # todo's
@@ -21,8 +22,18 @@
 - with this current setup, Vue can't really make use of Electron's inherant functions, like accessing the file system or clipboard stuff etc... which may not be a problem unless it is
 - have a build that will work with windows, don't have one for linux binaries or mac .app
 - currently when I double click the exe it installs inside my /ProgramFiles folder automatically, it doesn't give me a prompt where to install. Need to investigate to see if I can find out how to give a prompt (if this library can) to choose where it gets installed.
+- above is squirrel.windows install, still need to work on
 
-# steps I'm using
+# steps i'm using (electron-forge folder)
+
+- develop in vue folder
+- npm run build when done so that I get a dist folder of assets
+- move assets over to electron-forge src folder is targeting
+- note vue build's idiocy of not using "" on script path, add those in as well as update the path to be ./
+- npm run start to make sure it works in electron
+- run `npm run make` to make files in /out folder
+
+# steps I'm using (old - electron folder)
 
 - develop in vue folder
 - npm run build in vue when done so that I get a dist folder of assets
